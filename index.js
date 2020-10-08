@@ -5,8 +5,12 @@ var io = require("socket.io").listen(server);
 
 server.listen(3000, "192.168.88.128");
 
-app.get("", function (request, respons) {
+app.get("/", function (request, respons) {
    respons.sendFile(__dirname + "/index.html");
+});
+
+app.get("/favicon.ico", function (request, respons) {
+   respons.sendFile(__dirname + "/favicon.ico");
 });
 
 users = [];
